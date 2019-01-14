@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="doc.xsl"?>
+<doc>
+    <class name="StreamBufTX">
+        A class which will handle stream buffer and interface with hardware
+        <constructor visibility="public">
+            Standard constructor. Map the handler onto the {@param buffer_location} assuming a size of {@param size} words of 8 bits each.
+            <param type="volatile uint8_t *" name="buffer_location">Pointer to the buffer to interface with</param>
+            <param type="const uint_fast32_t" name="size">Buffer size</param>
+        </constructor>
+
+        <method name="write_byte" return="bool" >
+            Write the byte {@param byte} into the buffer if possible.
+            This function will update the internal information.
+            <param type="uint8_t" name="byte">Byte to write</param>
+            <return type="bool">True if the byte have been written. False otherwise</return>
+        </method>
+        <method name="read_byte" return="uint32_t">
+            Reads and return the next available byte.
+            This function will update the internal information.
+            <return type="uint8_t">Next byte to read. NUL (0) in case of overflow.</return>
+        </method>
+        <method name="get_hardware_available" return="uint_fast32_t">
+            This function will return the amount of byte contiguous bytes that might be read by hardware to reach
+            either the last end {@enum ControlCode} or the end of the buffer.
+            <return type="uint_fast32_t">The amount to read</return>
+        </method>
+        <method name="hardware_read_notification">
+            This function is used by an hardware transfer complete callback (Usually DMA) to notify the handler that
+            {@param read_bytes} have been consecutively read.
+            <param type="uint_fast32_t" name="read_bytes">Amount of read bytes</param>
+        </method>
+
+        <enum visibility="public" name="ControlCode">
+            This enumeration defines the control codes which may be passed to the &lt;&lt; operator.
+            <value val="0" name="end">Validate the data to be send through hardware</value>
+        </enum>
+
+    </class>
+</doc>

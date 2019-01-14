@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="doc.xsl"?>
+<doc>
+<class name="Vec2">
+  A simple class with two members : x and y,
+  used to represent points and vectors
+  <field visibility="public" type="number" name="x">x coordinate</field>
+  <field visibility="public" type="number" name="y">y coordinate</field>
+  <field const="true" type="Vec2" name="ZERO">
+    <brief>(0,0)</brief>
+    (x:0, y:0). Make sure you do not modify this constant.
+  </field>
+  <constructor visibility="public">
+    Standard and {@b only} constructor. sets both coordinates to the given
+    {@param x} and {@param y} values
+    <param type="number" name="x">x coordinate</param>
+    <param type="number" name="y">y coordinate</param>
+  </constructor>
+  
+  <enum visibility="public" name="Pin" type="uint8"> A Smooth enum
+    <value val="1" name="Pin1">A cute signification</value>
+    <value val="2" name="Pin2"> </value>
+  </enum>
+
+  <!--<property type="number" setter="false" name="squareMagnitude"/>
+  <property type="number" name="magnitude" />
+  <property type="number" name="angle" />
+  <property specification="static" type="Vec2" setter="false" name="zero"/> -->
+
+  <method name="clone" return="Vec2">
+    <return type="Vec2">a Vec2 with the same x and y attributes</return>
+  </method>
+  <method name="setXY" return="this"> sets {@field x} and {@field y} attributes
+    to the given {@param x} and {@param y} values
+    <param type="number" name="x">the new x coordinate</param>
+    <param type="number" name="y">the new y coordinate</param>
+  </method>
+  <method name="raz" return="this">sets x and y coordinates to 0
+  <param type="int" name="test"> at test parameter </param>
+  </method>
+  <method name="set" return="this">
+    sets sets {@field x} and {@field y} attributes to the same as the parameter
+    <param type="Vec2" name="vec" />
+  </method>
+</class>
+</doc>
