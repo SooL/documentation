@@ -34,6 +34,11 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <td>Sool generator</td>
+                                <td><xsl:value-of select="manifest/hash/mainv/@short"/></td>
+                                <td><xsl:value-of select="manifest/hash/mainv/@value"/></td>
+                            </tr>
+                            <tr>
                                 <td>Fileset</td>
                                 <td><xsl:value-of select="manifest/hash/files/@short"/></td>
                                 <td><xsl:value-of select="manifest/hash/files/@value"/></td>
@@ -64,8 +69,8 @@
                         <tbody>
                             <xsl:for-each select="manifest/fileset/family">
                             <tr>
-                                <th><xsl:value-of select="@name"/></th>
-                                <th><xsl:value-of select="@version"/></th>
+                                <td><xsl:value-of select="@name"/></td>
+                                <td><xsl:value-of select="@version"/></td>
                             </tr>
                             </xsl:for-each>
                         </tbody>
