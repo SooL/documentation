@@ -5,8 +5,7 @@ Summary
 ----------------------------------------------
 
  1. Requirements
- 2. Creating a project and enabling C++ support
- 3. Getting "Hello World !"
+ 2. Getting "Hello World !"
 
 Requirements
 -----------------------------------------------
@@ -34,11 +33,15 @@ int main()
 	GPIOB->enable_clock();
 	GPIOA->enable_clock();
 	PB3 = GPIO::Mode::Output;
-	PA2 = PA15= GPIO::Mode::AlternateFunction | GPIO::AF::AF7;
+	PA2 = GPIO::Mode::AlternateFunction | GPIO::AF::AF7;
+	
+	// For Rx
+	// PA15= GPIO::Mode::AlternateFunction | GPIO::AF::AF7;
 
 	USART2->enable_clock();
 	USART2->BRR = 833;
 	USART2->CR1.TE = 1;
+	// USART2->CR1.RE = 1;
 	USART2->CR1.UE = 1;
 
 	char msg[] = "Hello World !\r\n\0";
