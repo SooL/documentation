@@ -116,7 +116,7 @@ And, on a Nucleo 32 (with a STM32F303K8) the following should get you blinky.
 
 int main()
 {
-	using namespace sool::ll;
+	using namespace sool::core;
 
         GPIOB->enableClock();
 	PB3 = GPIO::Mode::Output | GPIO::Speed::Slow | GPIO::OutType::PushPull;
