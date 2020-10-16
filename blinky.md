@@ -1,4 +1,4 @@
-Getting blinky with SooL and Atollic TrueStudio
+Getting blinky with SooL and CubeIDE/TrueStudio
 ===============================================
 
 Summary
@@ -12,8 +12,7 @@ Summary
 Requirements
 -----------------------------------------------
 
- - Having a proper installation of Atollic TrueStudio and its toolchain.
-TrueStudio may be found for free at [https://atollic.com/resources/download/](https://atollic.com/resources/download/)
+ - Having a proper installation of CubeIDE  and its toolchain.
  - Having downloaded the SooL library
 
 
