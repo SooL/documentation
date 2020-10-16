@@ -21,7 +21,13 @@ TrueStudio may be found for free at [https://atollic.com/resources/download/](ht
 Creating a project and enabling C++ support
 ----------------------------------------------
 
+### Using STM32CubeIDE and the SooL patcher utility
+
+Check out the [SooL Patcher for CubeIDE](https://github.com/SooL/usertools-cubeide-patcher) repository and follow instructions. Then go directly to the Blinking part.
+
 ### Project creation
+
+> Deeply out of date
 
  - On Atollic, you may create a proper project by using :
 `File` -> `New` -> `C Project`
@@ -35,11 +41,15 @@ Now you should have a complete project, almost ready to go !
 
 ### Cleaning up
 
+> Deeply out of date
+
 First of all, you should clean you project up by removing any unnecessary files.
 To make it simple, you may remove all files in `Drivers/`, `main.c` and `system_stm32fYxx.c`, 
 leaving only the linker script (`stm32f30_flash.ld`) and the startup script `startup_stm32f303x8.s`.
 
 ### Enabling C++ support
+
+> Deeply out of date
 
 To enable the C++ support on an Embedded C Project you have to go in `File` -> `New` -> `Convert to a C/C++ project (Add C/C++ Nature)`.
 Chose to convert your project to C++ without changing anything else.
@@ -52,6 +62,8 @@ Finally, in order to get the full potential of SooL, you should enable some leve
 
 Adding SooL
 ------------------------------------------
+
+> Deeply out of date
 
 Now, it's time to add SooL to your project.
 
